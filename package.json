@@ -1,0 +1,8 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ruantiengo/blog.git",
+  "author": "ruan <ruantiengo@gmail.com>",
+  "license": "MIT"
+}
