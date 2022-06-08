@@ -1,6 +1,6 @@
 import { AddPost, AddPostNamespace } from '../../domain/usecases/add-post'
 import { CheckIfTitleAlreadyExists } from '../../domain/usecases/check-if-title-exists'
-import { TitleAlreadyExistsError } from '../errors/invalid-field-error'
+import { TitleAlreadyExistsError } from '../errors/title-alreayd-exists-error'
 import { MissingParamError } from '../errors/missing-param-error'
 import { badRequest, created, serverError } from '../helpers/http-helpers'
 import { Controller } from '../protocols/controller'
@@ -29,7 +29,7 @@ export class AddPostController implements Controller {
       }
       const verifyIfTitleAlreadyExists = await this.checkIfTitleAlreadyExists.checkTitle(postRequest.title)
       if (verifyIfTitleAlreadyExists === true) {
-        return badRequest(new TitleAlreadyExistsError('title'))
+        return badRequest(new TitleAlreadyExistsError())
       }
       const post = await this.addAccount.add(httpRequest.body)
 
