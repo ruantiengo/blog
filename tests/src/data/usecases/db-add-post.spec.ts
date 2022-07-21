@@ -25,7 +25,7 @@ const makeHttpRequest = {
   title: faker.lorem.sentence(4),
   type: faker.word.noun()
 }
-describe('Add post', () => {
+describe('Add post 2', () => {
   it('should return an account if repository works', async () => {
     const { sut } = makeSut()
     const request = makeHttpRequest
